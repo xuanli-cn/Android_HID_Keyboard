@@ -11,5 +11,19 @@
     <string name="BtnBackText">返回</string>
     <string name="show_shortcuts">快捷键</string>
     <string name="hide_shortcuts">收起快捷键</string>
-    <string name="touchpad_hint">单指滑动移动 · 单指轻点左键 · 双指同时轻点右键 · 双指上下滑动滚动</string>
+    <string name="touchpad_hint">单指滑动移动 · 单指轻点左键 · 双指同时轻点右键 · 双指上下滑动滚动\n轻点后再次按住滑动可拖拽，抬手释放</string>
+    <string name="mouse_settings">设置</string>
+    <string name="touchpad_settings_title">触控板设置</string>
+    <string name="settings_saved_hint">修改立即保存。点击左侧“返回”回到触控板。</string>
+    <string name="setting_show_shortcuts">显示快捷键按钮</string>
+    <string name="setting_show_mouse_buttons">显示底部左、中、右键</string>
+    <string name="mouse_speed_value">鼠标移动速度：%1$d</string>
+    <string name="setting_reverse_scroll">反向双指滚动</string>
+    <string name="reverse_scroll_hint">开启后，双指上下滑动的滚动方向与上一版相反。</string>
+    <string name="scroll_speed">双指滚动速度</string>
+    <string name="scroll_speed_value">双指滚动速度：%1$d</string>
+    <string name="setting_scroll_inertia">滚动惯性</string>
+    <string name="scroll_inertia_hint">快速双指滑动后抬手继续减速滚动；重新触摸或按键立即停止。默认关闭。</string>
+    <string name="setting_pointer_acceleration">指针加速</string>
+    <string name="pointer_acceleration_hint">慢滑保持精度，快滑移动更远。默认关闭。</string>
 </resources>

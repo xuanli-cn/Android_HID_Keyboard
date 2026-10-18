@@ -4,101 +4,235 @@
     android:id="@+id/mouse_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
+    android:orientation="horizontal"
     android:padding="8dp"
     android:keepScreenOn="true"
     android:splitMotionEvents="true"
     tools:context=".Mouse">
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:gravity="center_vertical"
-        android:orientation="horizontal">
+        android:layout_width="96dp"
+        android:layout_height="match_parent"
+        android:layout_marginEnd="8dp"
+        android:orientation="vertical">
 
         <Button
             android:id="@+id/BtnBack"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:text="@string/BtnBackText" />
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:minWidth="0dp"
+            android:text="@string/BtnBackText"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/open_settings"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:minWidth="0dp"
+            android:text="@string/mouse_settings"
+            android:textAllCaps="false" />
 
         <Button
             android:id="@+id/toggle_shortcuts"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:text="@string/show_shortcuts" />
-
-        <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="12dp"
-            android:labelFor="@id/sbMouseMoveSpeed"
-            android:text="@string/tvMoveSpeed"
-            android:textColor="@color/white" />
-
-        <SeekBar
-            android:id="@+id/sbMouseMoveSpeed"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:min="1"
-            android:max="6"
-            android:progress="3" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/shortcuts"
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:orientation="horizontal"
-        android:visibility="gone">
-
-        <Button android:id="@+id/mBtn1" style="@style/DefaultButton"
-            android:tag="@string/KeyCode80" android:text="@string/KeyText80" />
-        <Button android:id="@+id/mBtn2" style="@style/DefaultButton"
-            android:tag="@string/KeyCode84" android:text="@string/KeyText84" />
-        <Button android:id="@+id/mBtn3" style="@style/DefaultButton"
-            android:tag="@string/KeyCode83" android:text="@string/KeyText83" />
-        <Button android:id="@+id/mBtn4" style="@style/DefaultButton"
-            android:tag="@string/KeyCode85" android:text="@string/KeyText85" />
-        <Button android:id="@+id/mBtn5" style="@style/DefaultButton"
-            android:tag="@string/KeyCode86" android:text="@string/KeyText86" />
-        <Button android:id="@+id/mBtn6" style="@style/DefaultButton"
-            android:tag="@string/KeyCode87" android:text="@string/KeyText87" />
+            android:minHeight="56dp"
+            android:minWidth="0dp"
+            android:text="@string/show_shortcuts"
+            android:textAllCaps="false" />
     </LinearLayout>
 
     <FrameLayout
-        android:id="@+id/touch_area"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:layout_marginVertical="8dp"
-        android:background="@drawable/touch_area_border"
-        android:clickable="true"
-        android:focusable="true"
-        android:contentDescription="@string/touch_area">
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
 
-        <TextView
+        <LinearLayout
+            android:id="@+id/touchpad_panel"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center"
-            android:padding="16dp"
-            android:text="@string/touchpad_hint"
-            android:textColor="@color/white"
-            android:textSize="14sp"
-            android:importantForAccessibility="no" />
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/shortcuts"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <Button android:id="@+id/mBtn1" style="@style/DefaultButton"
+                    android:tag="@string/KeyCode80" android:text="@string/KeyText80" />
+                <Button android:id="@+id/mBtn2" style="@style/DefaultButton"
+                    android:tag="@string/KeyCode84" android:text="@string/KeyText84" />
+                <Button android:id="@+id/mBtn3" style="@style/DefaultButton"
+                    android:tag="@string/KeyCode83" android:text="@string/KeyText83" />
+                <Button android:id="@+id/mBtn4" style="@style/DefaultButton"
+                    android:tag="@string/KeyCode85" android:text="@string/KeyText85" />
+                <Button android:id="@+id/mBtn5" style="@style/DefaultButton"
+                    android:tag="@string/KeyCode86" android:text="@string/KeyText86" />
+                <Button android:id="@+id/mBtn6" style="@style/DefaultButton"
+                    android:tag="@string/KeyCode87" android:text="@string/KeyText87" />
+            </LinearLayout>
+
+            <FrameLayout
+                android:id="@+id/touch_area"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@drawable/touch_area_border"
+                android:clickable="true"
+                android:focusable="true"
+                android:contentDescription="@string/touch_area">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:padding="16dp"
+                    android:text="@string/touchpad_hint"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    android:importantForAccessibility="no" />
+            </FrameLayout>
+
+            <LinearLayout
+                android:id="@+id/mouse_buttons"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <Button android:id="@+id/mouse_left" style="@style/DefaultButton"
+                    android:tag="@string/MouseLeftKeyCode" android:text="@string/MouseLeftKey" />
+                <Button android:id="@+id/mouse_middle" style="@style/DefaultButton"
+                    android:tag="@string/MouseMiddleKeyCode" android:text="@string/MouseMiddleKey" />
+                <Button android:id="@+id/mouse_right" style="@style/DefaultButton"
+                    android:tag="@string/MouseRightKeyCode" android:text="@string/MouseRightKey" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <ScrollView
+            android:id="@+id/settings_panel"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/touchpad_settings_title"
+                    android:textColor="@color/white"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/settings_saved_hint"
+                    android:textColor="@color/white" />
+
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/show_shortcut_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="56dp"
+                    android:text="@string/setting_show_shortcuts"
+                    android:textColor="@color/white" />
+
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/show_mouse_buttons"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="56dp"
+                    android:text="@string/setting_show_mouse_buttons"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:id="@+id/speed_value"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:labelFor="@id/sbMouseMoveSpeed"
+                    android:textColor="@color/white"
+                    tools:text="鼠标移动速度：3" />
+
+                <SeekBar
+                    android:id="@+id/sbMouseMoveSpeed"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:contentDescription="@string/tvMoveSpeed"
+                    android:min="1"
+                    android:max="6"
+                    android:progress="3" />
+
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/reverse_scroll"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="56dp"
+                    android:text="@string/setting_reverse_scroll"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/reverse_scroll_hint"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:id="@+id/scroll_speed_value"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:labelFor="@id/sbScrollSpeed"
+                    android:textColor="@color/white"
+                    tools:text="双指滚动速度：3" />
+
+                <SeekBar
+                    android:id="@+id/sbScrollSpeed"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:contentDescription="@string/scroll_speed"
+                    android:min="1"
+                    android:max="6"
+                    android:progress="3" />
+
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/scroll_inertia"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="56dp"
+                    android:text="@string/setting_scroll_inertia"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/scroll_inertia_hint"
+                    android:textColor="@color/white" />
+
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/pointer_acceleration"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="56dp"
+                    android:text="@string/setting_pointer_acceleration"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/pointer_acceleration_hint"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+        </ScrollView>
     </FrameLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:orientation="horizontal">
-
-        <Button android:id="@+id/mouse_left" style="@style/DefaultButton"
-            android:tag="@string/MouseLeftKeyCode" android:text="@string/MouseLeftKey" />
-        <Button android:id="@+id/mouse_middle" style="@style/DefaultButton"
-            android:tag="@string/MouseMiddleKeyCode" android:text="@string/MouseMiddleKey" />
-        <Button android:id="@+id/mouse_right" style="@style/DefaultButton"
-            android:tag="@string/MouseRightKeyCode" android:text="@string/MouseRightKey" />
-    </LinearLayout>
 </LinearLayout>

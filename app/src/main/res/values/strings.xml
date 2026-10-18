@@ -194,5 +194,19 @@
     <string name="BtnBackText">Back</string>
     <string name="show_shortcuts">Shortcuts</string>
     <string name="hide_shortcuts">Hide shortcuts</string>
-    <string name="touchpad_hint">One finger: slide to move, tap for left click · Two fingers: tap together for right click, slide vertically to scroll</string>
+    <string name="touchpad_hint">One finger: move or tap for left click · Two fingers: tap for right click or slide to scroll\nTap, then touch again and slide to drag. Lift to release.</string>
+    <string name="mouse_settings">Settings</string>
+    <string name="touchpad_settings_title">Touchpad settings</string>
+    <string name="settings_saved_hint">Changes are saved immediately. Tap Back on the left to return to the touchpad.</string>
+    <string name="setting_show_shortcuts">Show shortcuts button</string>
+    <string name="setting_show_mouse_buttons">Show left, middle and right buttons</string>
+    <string name="mouse_speed_value">Mouse move speed: %1$d</string>
+    <string name="setting_reverse_scroll">Reverse two-finger scrolling</string>
+    <string name="reverse_scroll_hint">When enabled, vertical two-finger scrolling moves in the opposite direction to the previous version.</string>
+    <string name="scroll_speed">Two-finger scroll speed</string>
+    <string name="scroll_speed_value">Two-finger scroll speed: %1$d</string>
+    <string name="setting_scroll_inertia">Scroll inertia</string>
+    <string name="scroll_inertia_hint">A quick two-finger swipe continues scrolling and slows down after release. Touch or press a key to stop. Off by default.</string>
+    <string name="setting_pointer_acceleration">Pointer acceleration</string>
+    <string name="pointer_acceleration_hint">Slow slides stay precise; fast slides travel farther. Off by default.</string>
 </resources>
