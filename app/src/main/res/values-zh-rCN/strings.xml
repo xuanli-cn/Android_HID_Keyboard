@@ -9,4 +9,7 @@
     <string name="MouseMiddleKey">中键</string>
     <string name="tvMoveSpeed">鼠标移动速度</string>
     <string name="BtnBackText">返回</string>
+    <string name="show_shortcuts">快捷键</string>
+    <string name="hide_shortcuts">收起快捷键</string>
+    <string name="touchpad_hint">单指滑动移动 · 单指轻点左键 · 双指同时轻点右键 · 双指上下滑动滚动</string>
 </resources>

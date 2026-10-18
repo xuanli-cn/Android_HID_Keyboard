@@ -8,8 +8,8 @@ android {
         applicationId "org.sucareto.androidhidkeyboard"
         minSdk 26
         targetSdk 34
-        versionCode 11
-        versionName '1.5.2'
+        versionCode 12
+        versionName '1.5.3'
     }
 
     buildTypes {
@@ -34,4 +34,5 @@ dependencies {
 
 dependencies {
     implementation 'com.github.topjohnwu.libsu:io:5.2.2'
+    testImplementation 'junit:junit:4.13.2'
 }

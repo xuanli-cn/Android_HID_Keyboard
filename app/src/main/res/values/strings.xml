@@ -192,4 +192,7 @@
     <string name="tvMoveSpeed">Mouse Move Speed</string>
 
     <string name="BtnBackText">Back</string>
+    <string name="show_shortcuts">Shortcuts</string>
+    <string name="hide_shortcuts">Hide shortcuts</string>
+    <string name="touchpad_hint">One finger: slide to move, tap for left click · Two fingers: tap together for right click, slide vertically to scroll</string>
 </resources>

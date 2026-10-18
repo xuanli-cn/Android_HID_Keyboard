@@ -21,6 +21,8 @@ public class HidController {
                 kDev.close();
             } catch (IOException e) {
                 Log.e("UnInit", String.valueOf(e));
+            } finally {
+                kDev = null;
             }
         }
         if (mDev != null) {
@@ -29,6 +31,8 @@ public class HidController {
                 mDev.close();
             } catch (IOException e) {
                 Log.e("UnInit", String.valueOf(e));
+            } finally {
+                mDev = null;
             }
         }
     }
@@ -55,7 +59,7 @@ public class HidController {
         }
         try {
             mDev = SuFileOutputStream.open(SuFile.open("/dev/hidg1"));
-            mDev.write(kCode);
+            mDev.write(mCode);
             return false;
         } catch (Exception e) {
             Log.e("mInit", String.valueOf(e));
@@ -116,13 +120,40 @@ public class HidController {
     }
 
     public void mPress(byte code) {
-        mCode[0] += code;
+        mCode[0] = (byte) (mCode[0] | code);
         mSend();
 
     }
 
     public void mRelease(byte code) {
-        mCode[0] -= code;
+        mCode[0] = (byte) (mCode[0] & ~code);
         mSend();
+    }
+
+    public void mReleaseAll() {
+        if (mCode == null) return;
+        mCode[0] = 0;
+        mSend();
+    }
+
+    public void mMove(int x, int y) {
+        while (x != 0 || y != 0) {
+            int dx = Math.max(-127, Math.min(127, x));
+            int dy = Math.max(-127, Math.min(127, y));
+            mCode[1] = (byte) dx;
+            mCode[2] = (byte) dy;
+            mSend();
+            x -= dx;
+            y -= dy;
+        }
+    }
+
+    public void mScroll(int steps) {
+        while (steps != 0) {
+            int chunk = Math.max(-127, Math.min(127, steps));
+            mCode[3] = (byte) chunk;
+            mSend();
+            steps -= chunk;
+        }
     }
 }
